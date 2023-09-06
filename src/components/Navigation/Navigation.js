@@ -2,21 +2,25 @@ import React, { useCallback, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { debounce } from 'lodash';
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
+import { Input } from 'antd';
+import { useDispatch } from 'react-redux';
 
 import cx from 'classnames';
 
 import styles from './Navigation.module.scss';
 import { LINKS } from './Navigation.contant';
-import { Input } from 'antd';
+import { searchProduct } from '../../pages/Home/HomeSlice';
 
 const Navigation = () => {
   const [active, setActive] = useState('/basket');
   const [searchText, setSearchText] = useState('');
+  const dispatch = useDispatch();
 
   const searchDebonce = debounce((key) => {
     console.log(key);
     //TODO: declare search api
-  }, 1000)
+    dispatch(searchProduct(key));
+  }, 5000)
 
   const onChange = useCallback((e) => {
     const { value } = e.target;
@@ -37,10 +41,10 @@ const Navigation = () => {
           placeholder='What do you want to buy today?'
           value={searchText}
           onChange={onChange}
-          autoFocus
+          // autoFocus
           suffix={searchText.length === 0 ? <AiOutlineSearch /> : <AiOutlineClose onClick={onClearClick} />}
         />
-        {LINKS.map(link => <Link className={cx(active === link.url ? styles.active : styles.link)} to={link.url}>{link.label}</Link>)}
+        {LINKS.map(link => <Link className={cx(active === link.url ? styles.active : styles.link)} key={link.label} to={link.url}>{link.label}</Link>)}
       </div>
     </div>
   )

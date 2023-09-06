@@ -1,5 +1,5 @@
 .container {
-  height: 54rem;
+  // height: 54rem;
   width: 33rem;
   border: solid 0.1rem rgba(216, 214, 214, 0.692);
   border-radius: 1rem;
@@ -9,6 +9,8 @@
     height: 27rem;
     width: 100%;
     overflow: hidden;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
 
     .favItem {
       // TODO: need to do hearn icon position
