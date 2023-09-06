@@ -39,6 +39,11 @@
     }
   }
 
+  .left,
+  .right {
+    width: 100%;
+  }
+
   @include respond-to('mobile') {
 
     .left {
