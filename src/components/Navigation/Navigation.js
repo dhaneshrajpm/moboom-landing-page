@@ -18,10 +18,9 @@ const Navigation = () => {
   const dispatch = useDispatch();
 
   const searchDebonce = debounce((key) => {
-    console.log(key);
     //TODO: declare search api
     dispatch(searchProduct(key));
-  }, 5000)
+  }, 3000)
 
   const onChange = useCallback((e) => {
     const { value } = e.target;

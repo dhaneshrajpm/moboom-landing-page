@@ -1,7 +1,11 @@
+@import '../../styles/mixins.scss';
+
 .container {
   margin-top: 5rem;
   padding: 5rem;
   background-color: #f9fafb;
+  display: flex;
+  justify-content: center;
 
   a {
     color: #707684;
@@ -33,5 +37,31 @@
       height: 12rem;
       width: 100%;
     }
+  }
+
+  @include respond-to('mobile') {
+
+    .left {
+      .infoHelpCare {
+        display: none;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+
+    .right {
+      .acceptCards {
+        display: none;
+      }
+
+      padding: 0;
+      margin-bottom: 2rem;
+    }
+
+    flex-direction: column-reverse;
+    align-items: stretch;
+    width: 100%;
   }
 }

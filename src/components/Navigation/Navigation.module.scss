@@ -1,3 +1,5 @@
+@import '../../styles/mixins.scss';
+
 .container {
   display: flex;
   align-items: center;
@@ -27,5 +29,20 @@
   .pink {
     color: #f14bb2;
     font-weight: bold;
+  }
+
+  @include respond-to('mobile') {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .links {
+      width: 100%;
+
+      .link {
+        display: none;
+      }
+    }
   }
 }

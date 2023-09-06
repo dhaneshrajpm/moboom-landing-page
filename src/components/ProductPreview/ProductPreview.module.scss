@@ -1,35 +1,53 @@
+@import '../../styles//mixins.scss';
+
 .container {
-  padding-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
-  overflow: hidden;
-
-}
-
-.pagination {
   margin-top: 2rem;
-  display: flex;
-  justify-content: flex-end;
+  padding: 0 5rem;
 
-  :global(.ant-pagination-item) {
-    border-color: gray;
-    border-radius: 0;
-  }
+  .productContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    overflow: hidden;
 
-  :global(.ant-pagination-prev),
-  :global(.ant-pagination-next) {
-    background-color: #000;
-    border-radius: 0;
-
-    span {
-      color: #fff;
+    @include respond-to('mobile') {
+      grid-template-columns: repeat(2, 1fr);
+      width: 100%;
     }
   }
 
-  :global(.ant-pagination-disabled) {
-    background-color: #d1d5db;
-    border-radius: 0;
-    color: #000;
+  .pagination {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+
+    :global(.ant-pagination-item) {
+      border-color: gray;
+      border-radius: 0;
+    }
+
+    :global(.ant-pagination-prev),
+    :global(.ant-pagination-next) {
+      background-color: #000;
+      border-radius: 0;
+
+      span {
+        color: #fff;
+      }
+    }
+
+    :global(.ant-pagination-disabled) {
+      background-color: #d1d5db;
+      border-radius: 0;
+      color: #000;
+    }
+  }
+
+  @include respond-to('mobile') {
+    width: 100%;
+
+    .pagination {
+      justify-content: center;
+    }
   }
 }

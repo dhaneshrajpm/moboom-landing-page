@@ -19,8 +19,8 @@ const ProductPreview = () => {
   }, [dispatach, setPage]);
 
   return (
-    <>
-      <div className={styles.container}>
+    <div className={styles.container}>
+      <div className={styles.productContainer}>
         {products?.map(product => (<ProductCard key={product.id} {...product} />))}
       </div>
       <div className={styles.pagination}>
@@ -34,7 +34,7 @@ const ProductPreview = () => {
           showLessItems
         />
       </div>
-    </>
+    </div>
   )
 }
 

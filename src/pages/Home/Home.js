@@ -9,6 +9,7 @@ import Footer from '../../Layout/Footer/Footer';
 import { Select } from 'antd';
 import { capitalize } from 'lodash';
 import ProductPreview from '../../components/ProductPreview/ProductPreview';
+import Header from '../../Layout/Header/Header';
 
 const Home = () => {
   const dispatach = useDispatch();
@@ -35,15 +36,15 @@ const Home = () => {
 
   return (
     <>
+      <Header />
       <div className={styles.container}>
-        <Navigation />
         <div className={styles.dashboardCard}>
           <h3>Lorem Ipsum</h3>
           <p>Slash Sales begins in June. Get up to 80% Discount on all products <strong>Read More</strong></p>
         </div>
         <Select className={styles.categorySelect} placeholder='Select Category' options={[...formetedCategories()]} value={selectedCategory} onChange={onSelectCategory} />
-        <ProductPreview />
       </div>
+      <ProductPreview />
       <Footer />
     </>
   )
