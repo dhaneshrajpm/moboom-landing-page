@@ -21,15 +21,4 @@
     width: 33rem;
     margin-top: 2rem;
   }
-
-  .productContainer {
-    // display: flex;
-    // flex-wrap: wrap;
-    // gap: 2rem 3rem;
-    padding-top: 2rem;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
 }

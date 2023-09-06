@@ -45,7 +45,7 @@ const Navigation = () => {
           // autoFocus
           suffix={searchText.length === 0 ? <AiOutlineSearch /> : <AiOutlineClose onClick={onClearClick} />}
         />
-        {LINKS.map(link => <Link className={cx(active === link.url ? styles.active : styles.link)} key={link.label} to={link.url}>{link.label}{link.label === 'Basket' && <BsBasket2 />}</Link>)}
+        {LINKS.map(link => <Link className={cx(active === link.url ? styles.active : styles.link)} key={link.label} to={link.url}>{link.label} {link.label === 'Basket' && <BsBasket2 />}</Link>)}
       </div>
     </div>
   )

@@ -8,6 +8,7 @@ import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../../Layout/Footer/Footer';
 import { Select } from 'antd';
 import { capitalize } from 'lodash';
+import ProductPreview from '../../components/ProductPreview/ProductPreview';
 
 const Home = () => {
   const dispatach = useDispatch();
@@ -16,8 +17,7 @@ const Home = () => {
     dispatach(fetchCategories());
   }, [])
 
-  const { productsList, categories } = useSelector(state => state.home);
-  const { products, /*TODO: for pagination  => total, skip, limit */ } = productsList;
+  const { categories } = useSelector(state => state.home);
 
   const formetedCategories = () => {
     return (categories || []).map((category) => ({
@@ -42,9 +42,7 @@ const Home = () => {
           <p>Slash Sales begins in June. Get up to 80% Discount on all products <strong>Read More</strong></p>
         </div>
         <Select className={styles.categorySelect} placeholder='Select Category' options={[...formetedCategories()]} value={selectedCategory} onChange={onSelectCategory} />
-        <div className={styles.productContainer}>
-          {products?.map(product => (<ProductCard key={product.id} {...product} />))}
-        </div>
+        <ProductPreview />
       </div>
       <Footer />
     </>

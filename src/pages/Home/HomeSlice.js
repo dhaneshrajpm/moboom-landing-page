@@ -9,9 +9,9 @@ const initialState = {
   message: ''
 };
 
-export const fetchProduct = createAsyncThunk('product/fetchAll', async (_, thunkAPI) => {
+export const fetchProduct = createAsyncThunk('product/fetchAll', async (skip, thunkAPI) => {
   try {
-    return await fetchProductsApi().then(response => response.data)
+    return await fetchProductsApi(skip).then(response => response.data)
   } catch (error) {
     const message =
       (error.response &&
