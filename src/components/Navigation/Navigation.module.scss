@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+
+  .links {
+    .searchBar {
+      width: 60rem;
+    }
+
+    display: flex;
+    gap: 5rem;
+
+    .link {
+      font-size: 2rem;
+      color: gray;
+      text-decoration: none;
+    }
+
+    .active {
+      @extend .link;
+      color: black;
+      font-weight: 600;
+    }
+  }
+
+  .pink {
+    color: rgb(249, 34, 160);
+    font-weight: bold;
+  }
+}

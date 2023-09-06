@@ -1,0 +1,52 @@
+.container {
+  height: 54rem;
+  width: 33rem;
+  border: solid 0.1rem rgba(216, 214, 214, 0.692);
+  border-radius: 1rem;
+  font-size: 1.5rem;
+
+  .productImage {
+    height: 27rem;
+    width: 100%;
+    overflow: hidden;
+
+    .favItem {
+      // TODO: need to do hearn icon position
+      height: 1rem;
+      width: 100%;
+      background-color: gray;
+    }
+  }
+
+  .productDetails {
+    height: 50%;
+    padding: 1.5rem;
+
+    .title {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      @extend .price
+    }
+
+    .description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      width: 100%;
+
+    }
+
+    .price {
+      margin: unset;
+      opacity: 0.8;
+    }
+
+    .ratings {
+      font-size: smaller;
+    }
+  }
+}

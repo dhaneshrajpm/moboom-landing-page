@@ -1,0 +1,26 @@
+.container {
+  padding: 0 5rem;
+
+  .dashboardCard {
+    padding: 1.5rem;
+    color: #fff;
+    border-radius: 1rem;
+    background: rgb(51, 51, 56);
+    background: linear-gradient(90deg, rgba(51, 51, 56, 1) 0%, rgba(44, 44, 51, 1) 50%, rgba(207, 113, 73, 1) 100%);
+
+    h3 {
+      margin: unset;
+    }
+  }
+
+  .productContainer {
+    // display: flex;
+    // flex-wrap: wrap;
+    // gap: 2rem 3rem;
+    padding-top: 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
