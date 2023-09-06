@@ -1,10 +1,9 @@
 .container {
   height: 33rem;
-  // width: 23rem;
   border: solid 0.1rem rgba(216, 214, 214, 0.692);
   border-radius: 1rem;
-  // font-size: 1.5rem;
   overflow: hidden;
+  position: relative;
 
   .image {
     height: 50%;
@@ -13,9 +12,17 @@
 
   .favItem {
     // TODO: need to do hearn icon position
-    height: 1rem;
-    width: 100%;
-    background-color: gray;
+    position: absolute;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 1rem;
+    top: 1rem;
+    background-color: rgba($color: #a3a6a8, $alpha: 0.4);
+    color: #fff;
+    font-size: 1.8rem;
   }
 
   .productDetails {

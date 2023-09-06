@@ -42,7 +42,10 @@ const Home = () => {
           <h3>Lorem Ipsum</h3>
           <p>Slash Sales begins in June. Get up to 80% Discount on all products <strong>Read More</strong></p>
         </div>
-        <Select className={styles.categorySelect} placeholder='Select Category' options={[...formetedCategories()]} value={selectedCategory} onChange={onSelectCategory} />
+        <div className={styles.categorySelect}>
+          <span className={styles.categorySelectLabel}>Select Category</span>
+          <Select placeholder='Select Category' options={[...formetedCategories()]} value={selectedCategory} onChange={onSelectCategory} />
+        </div>
       </div>
       <ProductPreview />
       <Footer />
