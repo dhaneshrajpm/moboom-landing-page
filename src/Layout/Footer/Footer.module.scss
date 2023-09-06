@@ -2,4 +2,36 @@
   margin-top: 5rem;
   padding: 5rem;
   background-color: #f9fafb;
+
+  a {
+    color: #707684;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .infoHelpCare {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .right {
+    padding-left: 10rem;
+
+    .socialPlatform {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 3rem;
+      margin-right: 1rem;
+    }
+
+    img {
+      height: 12rem;
+      width: 100%;
+    }
+  }
 }

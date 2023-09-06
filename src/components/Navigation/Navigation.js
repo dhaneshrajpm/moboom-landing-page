@@ -4,15 +4,16 @@ import { debounce } from 'lodash';
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 import { Input } from 'antd';
 import { useDispatch } from 'react-redux';
-
+import { BsBasket2 } from 'react-icons/bs';
 import cx from 'classnames';
 
 import styles from './Navigation.module.scss';
 import { LINKS } from './Navigation.contant';
 import { searchProduct } from '../../pages/Home/HomeSlice';
 
+
 const Navigation = () => {
-  const [active, setActive] = useState('/basket');
+  const [active, setActive] = useState('/basket'); //eslint-disable-line
   const [searchText, setSearchText] = useState('');
   const dispatch = useDispatch();
 
@@ -44,7 +45,7 @@ const Navigation = () => {
           // autoFocus
           suffix={searchText.length === 0 ? <AiOutlineSearch /> : <AiOutlineClose onClick={onClearClick} />}
         />
-        {LINKS.map(link => <Link className={cx(active === link.url ? styles.active : styles.link)} key={link.label} to={link.url}>{link.label}</Link>)}
+        {LINKS.map(link => <Link className={cx(active === link.url ? styles.active : styles.link)} key={link.label} to={link.url}>{link.label}{link.label === 'Basket' && <BsBasket2 />}</Link>)}
       </div>
     </div>
   )
