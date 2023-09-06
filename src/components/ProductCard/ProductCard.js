@@ -6,10 +6,8 @@ import styles from './ProductCard.module.scss';
 const ProductCard = ({ title, thumbnail, price, rating, description }) => {
   return (
     <div className={styles.container}>
-      <div className={styles.productImage}>
-        <img className={styles.image} src={thumbnail} alt='OOPS!, failed to fetch' />
-        <span className={styles.favItem}>{/* TODO: heart icon */}</span>
-      </div>
+      <img className={styles.image} src={thumbnail} alt='OOPS!, failed to fetch' />
+      <span className={styles.favItem}>{/* TODO: heart icon */}</span>
       <div className={styles.productDetails}>
         <h2 className={styles.title}>{title}</h2>
         <p className={styles.description}>Product description: {description}</p>

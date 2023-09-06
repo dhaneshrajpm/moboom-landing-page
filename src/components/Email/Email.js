@@ -13,7 +13,7 @@ const Email = () => {
         <Input className={styles.email} type='email' placeholder='Enter your email' value={email} onChange={(e) => setEmail(e.target.value)} />
         <Button onClick={() => isEmpty(email) ? alert('Please enter your email') : alert(email)} >SUBSCRIBE</Button>
       </div>
-      <span>By clicking the SUBSCRIBE button, you are agreeing to our <a href='javascript:void(0)'>Privacy & Cookie Policy</a></span>
+      <span>By clicking the SUBSCRIBE button, you are agreeing to our <a href='#!'>Privacy & Cookie Policy</a></span>
     </div>
   )
 }

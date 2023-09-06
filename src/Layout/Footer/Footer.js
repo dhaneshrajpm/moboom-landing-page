@@ -21,8 +21,8 @@ const Footer = () => {
           </div>
           <div>
             <p>&#169;2010-2020 All Rights Rerserved</p>
-            <p><a href='javascript:void(0)'>Privacy Center</a> | <a href='javascript:void(0)'>Privacy & Cookie Policy</a> | <a href='javascript:void(0)'>Manage Cookie</a></p>
-            <p><a href='javascript:void(0)'>Terms & Conditions</a> | <a href='javascript:void(0)'>Copyright Notice</a> | <a href='javascript:void(0)'>Imprint</a></p>
+            <p><a href='#!'>Privacy Center</a> | <a href='#!'>Privacy & Cookie Policy</a> | <a href='#!'>Manage Cookie</a></p>
+            <p><a href='#!'>Terms & Conditions</a> | <a href='#!'>Copyright Notice</a> | <a href='#!'>Imprint</a></p>
           </div>
         </Col>
         <Col span={12} className={styles.right}>
