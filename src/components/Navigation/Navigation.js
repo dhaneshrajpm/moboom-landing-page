@@ -17,9 +17,9 @@ const Navigation = () => {
   const [searchText, setSearchText] = useState('');
   const dispatch = useDispatch();
 
-  const searchDebonce = debounce((key) => {
-    dispatch(searchProduct(key));
-  }, 5000)
+  const searchDebonce = useCallback(debounce(value => {
+    dispatch(searchProduct(value))
+  }, 1000), []);
 
   const onChange = useCallback((e) => {
     const { value } = e.target;
@@ -29,7 +29,8 @@ const Navigation = () => {
 
   const onClearClick = useCallback(() => {
     setSearchText('');
-  }, [setSearchText]);
+    searchDebonce('');
+  }, [searchDebonce, setSearchText]);
 
   return (
     <div className={styles.container}>

@@ -6,9 +6,10 @@ import styles from './ProductPreview.module.scss';
 import ProductCard from '../ProductCard/ProductCard';
 import { fetchProduct } from '../../pages/Home/HomeSlice';
 import { isEmpty } from 'lodash';
+import Loader from '../Loader/Loader';
 
 const ProductPreview = () => {
-  const { productsList } = useSelector(state => state.home);
+  const { productsList, loading } = useSelector(state => state.home);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,6 +25,10 @@ const ProductPreview = () => {
     setPage(page)
     dispatch(fetchProduct((page - 1) * 12))
   }, [dispatch, setPage]);
+
+  if (loading) {
+    return (<Loader />)
+  }
 
   return (
     <div className={styles.container}>
