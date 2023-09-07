@@ -1,24 +1,23 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
 import styles from './Home.module.scss';
-import ProductCard from '../../components/ProductCard/ProductCard';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchCategories, fetchProduct, searchByCategory } from './HomeSlice';
-import Navigation from '../../components/Navigation/Navigation';
+import { fetchCategories, searchByCategory } from './HomeSlice';
 import Footer from '../../Layout/Footer/Footer';
 import { Select } from 'antd';
-import { capitalize } from 'lodash';
+import { capitalize, isEmpty } from 'lodash';
 import ProductPreview from '../../components/ProductPreview/ProductPreview';
 import Header from '../../Layout/Header/Header';
 
 const Home = () => {
+  const { categories } = useSelector(state => state.home);
   const dispatach = useDispatch();
   useEffect(() => {
-    dispatach(fetchProduct());
-    dispatach(fetchCategories());
-  }, [])
+    if (isEmpty(categories)) {
+      dispatach(fetchCategories());
+    }
+  }, [categories, dispatach])
 
-  const { categories } = useSelector(state => state.home);
 
   const formetedCategories = () => {
     return (categories || []).map((category) => ({

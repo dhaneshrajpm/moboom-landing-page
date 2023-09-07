@@ -1,22 +1,29 @@
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { Pagination } from 'antd';
 
 import styles from './ProductPreview.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
 import ProductCard from '../ProductCard/ProductCard';
-import { Pagination } from 'antd';
 import { fetchProduct } from '../../pages/Home/HomeSlice';
+import { isEmpty } from 'lodash';
 
 const ProductPreview = () => {
-  const dispatach = useDispatch();
+  const { productsList } = useSelector(state => state.home);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (isEmpty(productsList)) {
+      dispatch(fetchProduct());
+    }
+  }, [productsList, dispatch])
 
   const [page, setPage] = useState(1);
-  const { productsList } = useSelector(state => state.home);
   const { products, total } = productsList;
 
   const onChange = useCallback((page) => {
     setPage(page)
-    dispatach(fetchProduct((page - 1) * 12))
-  }, [dispatach, setPage]);
+    dispatch(fetchProduct((page - 1) * 12))
+  }, [dispatch, setPage]);
 
   return (
     <div className={styles.container}>
