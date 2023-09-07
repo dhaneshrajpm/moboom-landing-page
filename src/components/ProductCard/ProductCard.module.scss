@@ -11,7 +11,6 @@
   }
 
   .favItem {
-    // TODO: need to do hearn icon position
     position: absolute;
     height: 3rem;
     width: 3rem;
@@ -23,6 +22,19 @@
     background-color: rgba($color: #a3a6a8, $alpha: 0.4);
     color: #fff;
     font-size: 1.8rem;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+
+      .outlineHeart {
+        color: red;
+      }
+    }
+
+    .fillHeart {
+      color: red;
+    }
   }
 
   .productDetails {
